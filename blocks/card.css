@@ -43,6 +43,8 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 0px 0px 10px 10px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__text {
