@@ -62,6 +62,7 @@
   width: 21px;
   height: 18px;
   border: none;
+  padding: 0; /* I been trying but I have not been able to find a solution to stop the button from being cropped */
 }
 
 .card__like-button:hover {
