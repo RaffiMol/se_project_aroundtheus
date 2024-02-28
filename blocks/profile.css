@@ -21,6 +21,7 @@
     "title button"
     "description description";
   grid-template-columns: minmax(auto, 373px), auto;
+  align-items: center;
 }
 
 .profile__edit-button {
@@ -29,8 +30,7 @@
   width: 24px;
   grid-area: button;
   margin-left: 18px;
-  margin-top: auto;
-  margin-bottom: auto;
+
   border: 1px solid #ffffff;
 }
 
@@ -87,7 +87,7 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 975px) {
   .profile {
     max-width: 775px;
     margin: 36px auto;
@@ -97,7 +97,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .profile {
     max-width: 282px;
     margin: 36px auto 0px;
@@ -118,16 +118,13 @@
     font-size: 22px;
     font-weight: 500;
     line-height: 27px;
-    letter-spacing: 0em;
     text-align: center;
     margin-top: 30px;
   }
 
   .profile__description {
     font-size: 14px;
-    font-weight: 400;
     line-height: 17px;
-    letter-spacing: 0em;
     text-align: center;
     margin-top: 16px;
   }

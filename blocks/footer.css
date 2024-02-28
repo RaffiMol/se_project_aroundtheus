@@ -1,19 +1,13 @@
 .footer {
-  margin-top: 47px;
+  margin-top: 67px;
   margin-bottom: 60px;
-  font-family: Inter, Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: left;
 }
 
 .footer__copyright {
   font-family: Inter, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 17px;
+  line-height: 22px;
   letter-spacing: 0em;
   text-align: left;
   margin-top: 0;
@@ -21,21 +15,20 @@
   color: #545454;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 975px) {
   .footer {
     max-width: 580px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .footer {
     max-width: 282px;
-    margin-top: 27px;
+    margin-top: 48px;
   }
 
   .footer__copyright {
     font-size: 14px;
-    font-weight: 400;
     line-height: 17px;
   }
 }

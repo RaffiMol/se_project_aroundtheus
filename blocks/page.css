@@ -16,13 +16,13 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 975px) {
   .page__section {
     max-width: 775px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .page__section {
     max-width: 282px;
   }
