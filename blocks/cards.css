@@ -17,51 +17,6 @@
   padding: 0;
 }
 
-.card__image {
-  height: 282px;
-  width: 282px;
-  border-radius: 10px 10px 0px 0px;
-  object-fit: cover;
-}
-
-.card__description {
-  display: flex;
-  background-color: white;
-  color: black;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 0px 0px 10px 10px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.card__text {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 29px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.card__like-button {
-  background: transparent url(../images/like_button.svg) center no-repeat;
-  width: 21px;
-  height: 18px;
-  border: none;
-  padding: 0; /* I been trying but I have not been able to find a solution to stop the button from being cropped */
-}
-
-.card__like-button:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
 @media screen and (max-width: 800px) {
   .cards__list {
     max-width: 775px;
@@ -74,5 +29,6 @@
   .cards__list {
     max-width: 282px;
     grid-template-columns: repeat(1, 282px);
+    margin-top: 0;
   }
 }

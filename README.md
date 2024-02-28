@@ -16,4 +16,4 @@ It is an example of a social media profile, with several posts containing differ
 
 **Github Link**
 
-- [Link to the project on Github](https://github.com/moleman13/se_project_aroundtheus)
+- [Link to the project on Github](https://moleman13.github.io/se_project_aroundtheus/)
