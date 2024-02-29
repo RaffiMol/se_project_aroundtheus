@@ -24,8 +24,7 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 0px 0px 10px 10px;
-  white-space: nowrap;
-  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__text {
@@ -36,6 +35,8 @@
   line-height: 29px;
   letter-spacing: 0em;
   text-align: left;
+  text-overflow: ellipsis;
+  max-width: 221px;
 }
 
 .card__like-button {
