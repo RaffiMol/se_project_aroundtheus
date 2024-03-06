@@ -39,6 +39,8 @@
   text-align: left;
   text-overflow: ellipsis;
   max-width: 221px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__like-button {
