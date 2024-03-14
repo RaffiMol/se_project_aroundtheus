@@ -34,6 +34,5 @@ const initialCards = [
   cardData3,
   cardData4,
   cardData5,
-  cardData5,
   cardData6,
 ];
