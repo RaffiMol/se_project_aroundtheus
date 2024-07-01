@@ -11,6 +11,7 @@
   width: 282px;
   border-radius: 10px 10px 0px 0px;
   object-fit: cover;
+  display: block;
 }
 
 .card__description {
@@ -59,5 +60,28 @@
 
 .card__like-button:hover {
   opacity: 0.5;
+  cursor: pointer;
+}
+
+.card__top {
+  position: relative;
+  display: block;
+}
+
+.card__delete-button {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  display: block;
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  width: 18px;
+  height: 19.3px;
+  gap: 0px;
+  border: none;
+  padding: 0;
+}
+
+.card__delete-button:hover {
+  opacity: 0.6;
   cursor: pointer;
 }
