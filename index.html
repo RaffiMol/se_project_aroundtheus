@@ -48,7 +48,7 @@
         <p class="footer__copyright">&copy; Raffi</p>
       </footer>
     </div>
-
+    <!-- This is the pop up for the profile edit modal -->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button
@@ -57,7 +57,7 @@
           type="button"
         ></button>
         <h1 class="modal__title">Edit Profile</h1>
-        <form class="modal__form" name="modalForm">
+        <form class="modal__form" name="modalForm" id="profile-edit-form">
           <input
             class="modal__input"
             type="text"
@@ -73,6 +73,35 @@
             placeholder="Description"
           />
           <button class="modal__button" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+    <!----- This is for the adding a card modal-->
+
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button
+          class="modal__close"
+          id="add-card-close-button"
+          type="button"
+        ></button>
+        <h1 class="modal__title">New Place</h1>
+        <form class="modal__form" name="modalForm" id="card-add-form">
+          <input
+            class="modal__input"
+            type="text"
+            name="title"
+            id="card-place-input"
+            placeholder="Title"
+          />
+          <input
+            class="modal__input"
+            type="text"
+            name="url"
+            id="card-url-input"
+            placeholder="Image URL"
+          />
+          <button class="modal__button" type="submit">Create</button>
         </form>
       </div>
     </div>
