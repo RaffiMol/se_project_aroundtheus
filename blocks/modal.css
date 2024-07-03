@@ -24,6 +24,21 @@
   border-radius: 10px;
 }
 
+.modal__container-image {
+  position: relative;
+  max-height: 75vh;
+  max-width: 75vw;
+
+  margin: auto;
+}
+
+.modal__preview-image {
+  width: 433px;
+  height: 540px;
+
+  margin: auto;
+}
+
 .modal__form {
   display: flex;
   flex-direction: column;
