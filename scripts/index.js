@@ -59,6 +59,13 @@ const cardAddForm = document.querySelector("#card-add-form");
 const cardTitleInput = document.querySelector("#card-place-input");
 const cardURLInput = document.querySelector("#card-url-input");
 
+const previewImageModal = document.querySelector("#preview-image-modal");
+const previewImage = document.querySelector(".modal__preview-image");
+const previewImageClose = document.querySelector("#modal__preview-close");
+const previewImageDescrip = document.querySelector(
+  ".modal__preview-description"
+);
+
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -91,6 +98,12 @@ function getCardElement(cardData) {
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
+  cardImageEl.addEventListener("click", () => {
+    previewImage.src = cardData.link;
+    previewImageDescrip.innerHTML = cardData.name;
+    console.log(previewImageDescrip.value);
+    openPopup(previewImageModal);
+  });
   return cardElement;
 }
 
@@ -114,6 +127,10 @@ function renderCard(cardData, wrapper) {
 //   profileDescriptionInput.value = profileDescription.textContent;
 //   profileEditModal.classList.add("modal_opened");
 // });
+
+previewImageClose.addEventListener("click", () => {
+  closePopup(previewImageModal);
+});
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
