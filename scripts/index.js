@@ -110,9 +110,9 @@ function getCardElement(cardData) {
 
 function addCardFormSubmit(evt) {
   evt.preventDefault();
-  evt.target.reset();
   const name = cardTitleInput.value;
   const link = cardURLInput.value;
+  evt.target.reset();
   renderCard({ name, link }, cardListEl);
   closePopup(cardAddModal);
 }
