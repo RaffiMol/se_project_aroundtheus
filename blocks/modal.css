@@ -11,11 +11,11 @@
 
 .modal_opened {
   display: flex;
-  animation: openModal 2s;
+  animation: openModal 0.5s;
 }
 
-.modal__removed {
-  animation: closeModal 2s;
+.modal_removed {
+  animation: closeModal 0.5s;
 }
 
 .modal__container {

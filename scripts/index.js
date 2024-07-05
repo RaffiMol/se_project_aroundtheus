@@ -75,12 +75,12 @@ const cardListEl = document.querySelector(".cards__list");
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
-  modal.classList.add("modal__removed");
+  modal.classList.add("modal_removed");
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
-  modal.classList.remove("modal__removed");
+  modal.classList.remove("modal_removed");
 }
 
 function getCardElement(cardData) {
@@ -100,7 +100,8 @@ function getCardElement(cardData) {
   });
   cardImageEl.addEventListener("click", () => {
     previewImage.src = cardData.link;
-    previewImageDescrip.innerHTML = cardData.name;
+    previewImage.alt = cardData.name;
+    previewImageDescrip.textContent = cardData.name;
     console.log(previewImageDescrip.value);
     openPopup(previewImageModal);
   });
@@ -109,6 +110,7 @@ function getCardElement(cardData) {
 
 function addCardFormSubmit(evt) {
   evt.preventDefault();
+  evt.target.reset();
   const name = cardTitleInput.value;
   const link = cardURLInput.value;
   renderCard({ name, link }, cardListEl);
@@ -156,7 +158,5 @@ cardAddButton.addEventListener("click", () => {
 cardAddCloseButton.addEventListener("click", () => {
   closePopup(cardAddModal);
 });
-
-cardAddForm.addEventListener("submit", addCardFormSubmit);
 
 cardAddForm.addEventListener("submit", addCardFormSubmit);
