@@ -11,6 +11,11 @@
 
 .modal_opened {
   display: flex;
+  animation: openModal 2s;
+}
+
+.modal__removed {
+  animation: closeModal 2s;
 }
 
 .modal__container {
@@ -22,6 +27,36 @@
   padding-right: 36px;
   padding-bottom: 36.51px;
   border-radius: 10px;
+}
+
+.modal__container-image {
+  position: relative;
+  max-height: 75vh;
+  max-width: 75vw;
+
+  margin: auto;
+}
+
+.modal__preview-image {
+  width: 433px;
+  height: 540px;
+
+  margin: auto;
+}
+
+.modal__preview-description {
+  color: white;
+  width: 291px;
+  height: 12px;
+  margin-top: 10px;
+  left: 424px;
+  gap: 0px;
+  z-index: 999;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
 }
 
 .modal__form {
@@ -145,5 +180,43 @@
     left: 245.62px;
     /* bottom: 335.62px; */
     bottom: calc(100% + 21.62px);
+  }
+
+  .modal__container-image {
+    max-width: 238px;
+    max-height: 299px;
+  }
+
+  .modal__preview-image {
+    max-width: 238px;
+    max-height: 299px;
+  }
+}
+
+@keyframes openModal {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes closeModal {
+  from {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+    display: none;
   }
 }
