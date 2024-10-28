@@ -57,21 +57,41 @@
           type="button"
         ></button>
         <h1 class="modal__title">Edit Profile</h1>
-        <form class="modal__form" name="modalForm" id="profile-edit-form">
-          <input
-            class="modal__input"
-            type="text"
-            name="title"
-            id="profile-title-input"
-            placeholder="Name"
-          />
-          <input
-            class="modal__input"
-            type="text"
-            name="description"
-            id="profile-description-input"
-            placeholder="Description"
-          />
+        <form
+          class="modal__form js-modal-form"
+          name="modalForm"
+          id="profile-edit-form"
+        >
+          <label class="input__label">
+            <input
+              class="modal__input"
+              type="text"
+              name="title"
+              id="profile-title-input"
+              placeholder="Name"
+              maxlength="40"
+              minlength="2"
+              required
+            />
+            <span class="input__error" id="profile-title-input-error"
+              >Please fill out this field.</span
+            >
+          </label>
+          <label class="input__label">
+            <input
+              class="modal__input"
+              type="text"
+              name="description"
+              id="profile-description-input"
+              placeholder="Description"
+              maxlength="200"
+              minlength="2"
+              required
+            />
+            <span class="input__error" id="profile-description-input-error"
+              >Please enter a webaddress.</span
+            >
+          </label>
           <button class="modal__button" type="submit">Save</button>
         </form>
       </div>
@@ -86,22 +106,31 @@
           type="button"
         ></button>
         <h1 class="modal__title">New Place</h1>
-        <form class="modal__form" name="modalForm" id="card-add-form">
+        <form
+          class="modal__form js-modal-form"
+          name="modalForm"
+          id="card-add-form"
+        >
           <input
             class="modal__input"
             type="text"
             name="title"
             id="card-place-input"
             placeholder="Title"
+            required
           />
+          <span class="input__error" id="card-place-input-error">Blank</span>
           <input
             class="modal__input"
-            type="text"
+            type="url"
             name="url"
             id="card-url-input"
             placeholder="Image URL"
-          />
-          <button class="modal__button" type="submit">Create</button>
+            required
+          /><span class="input__error" id="card-url-input-error">Blank</span>
+          <button class="modal__button popup__button_disabled" type="submit">
+            Create
+          </button>
         </form>
       </div>
     </div>
@@ -133,5 +162,6 @@
     </template>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
