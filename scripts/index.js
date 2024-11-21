@@ -78,28 +78,38 @@ const cardListEl = document.querySelector(".cards__list");
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
   modal.classList.add("modal_removed");
-  modal.removeEventListener("keyup");
-  modal.removeEventListener("click");
+  document.removeEventListener("keyup", escapeModal);
+  document.removeEventListener("click", clickModal);
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
   modal.classList.remove("modal_removed");
-  document.addEventListener("keyup", (e) => {
+  document.addEventListener("keyup", escapeModal(modal));
+  document.addEventListener("click", clickModal(modal));
+}
+
+/**  Variables for eventListener functions */
+
+var escapeModal = function (modal) {
+  document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closePopup(modal);
     }
   });
+};
+
+var clickModal = function (modal) {
   document.addEventListener("click", (e) => {
     if (
-      e.target === profileEditModal ||
-      e.target === previewImageModal ||
-      e.target === cardAddModal
+      event.target === profileEditModal ||
+      event.target === previewImageModal ||
+      event.target === cardAddModal
     ) {
       closePopup(modal);
     }
   });
-}
+};
 
 // window.addEventListener("keyup", (e) => {
 //   if (e.key === "Escape") {
