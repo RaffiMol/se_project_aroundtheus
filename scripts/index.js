@@ -44,6 +44,7 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileCloseButton = profileEditModal.querySelector(
   "#profile-close-button"
 );
+
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -76,39 +77,43 @@ const cardListEl = document.querySelector(".cards__list");
 /** Functions */
 
 function closePopup(modal) {
+  // document.removeEventListener("keyup", escapeModal(modal), "true");
+  // document.removeEventListener("click", clickModal(modal), "true");
   modal.classList.remove("modal_opened");
   modal.classList.add("modal_removed");
-  document.removeEventListener("keyup", escapeModal);
-  document.removeEventListener("click", clickModal);
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
   modal.classList.remove("modal_removed");
-  document.addEventListener("keyup", escapeModal(modal));
-  document.addEventListener("click", clickModal(modal));
+  document.addEventListener("keyup", escapeModal(modal), { once: true });
+  document.addEventListener("click", clickModal(modal), { once: true });
 }
 
 /**  Variables for eventListener functions */
 
-var escapeModal = function (modal) {
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closePopup(modal);
-    }
-  });
+let escapeModal = function (modal) {
+  document.addEventListener(
+    "keydown",
+    (e) => {
+      if (e.key === "Escape") {
+        closePopup(modal);
+        // console.log("Yup");
+      }
+    },
+    { once: true }
+  );
 };
 
-var clickModal = function (modal) {
+let clickModal = function (modal) {
   document.addEventListener("click", (e) => {
-    if (
-      event.target === profileEditModal ||
-      event.target === previewImageModal ||
-      event.target === cardAddModal
-    ) {
+    const modalOpened = document.querySelector(".modal_opened");
+    if (e.target === modalOpened) {
       closePopup(modal);
+      // console.log("Yup");
     }
-  });
+  }),
+    { once: true };
 };
 
 // window.addEventListener("keyup", (e) => {
@@ -158,7 +163,7 @@ function getCardElement(cardData) {
     previewImage.src = cardData.link;
     previewImage.alt = cardData.name;
     previewImageDescrip.textContent = cardData.name;
-    console.log(previewImageDescrip.value);
+    // console.log(previewImageDescrip.value);
     openPopup(previewImageModal);
   });
   return cardElement;

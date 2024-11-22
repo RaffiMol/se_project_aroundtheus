@@ -62,7 +62,7 @@
           name="modalForm"
           id="profile-edit-form"
         >
-          <label class="input__label">
+          <label class="modal__input_label">
             <input
               class="modal__input"
               type="text"
@@ -73,11 +73,11 @@
               minlength="2"
               required
             />
-            <span class="input__error" id="profile-title-input-error"
+            <span class="modal__input_error" id="profile-title-input-error"
               >Please fill out this field.</span
             >
           </label>
-          <label class="input__label">
+          <label class="modal__input_label">
             <input
               class="modal__input"
               type="text"
@@ -88,7 +88,9 @@
               minlength="2"
               required
             />
-            <span class="input__error" id="profile-description-input-error"
+            <span
+              class="modal__input_error"
+              id="profile-description-input-error"
               >Please enter a webaddress.</span
             >
           </label>
@@ -119,7 +121,9 @@
             placeholder="Title"
             required
           />
-          <span class="input__error" id="card-place-input-error">Blank</span>
+          <span class="modal__input_error" id="card-place-input-error"
+            >Blank</span
+          >
           <input
             class="modal__input"
             type="url"
@@ -127,7 +131,9 @@
             id="card-url-input"
             placeholder="Image URL"
             required
-          /><span class="input__error" id="card-url-input-error">Blank</span>
+          /><span class="modal__input_error" id="card-url-input-error"
+            >Blank</span
+          >
           <button class="modal__button modal__button_disabled" type="submit">
             Create
           </button>
