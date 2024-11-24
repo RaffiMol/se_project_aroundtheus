@@ -77,8 +77,8 @@ const cardListEl = document.querySelector(".cards__list");
 /** Functions */
 
 function closePopup(modal) {
-  // document.removeEventListener("keyup", escapeModal(modal), "true");
-  // document.removeEventListener("click", clickModal(modal), "true");
+  document.removeEventListener("keyup", escapeModal);
+  document.removeEventListener("click", clickModal);
   modal.classList.remove("modal_opened");
   modal.classList.add("modal_removed");
 }
@@ -86,35 +86,39 @@ function closePopup(modal) {
 function openPopup(modal) {
   modal.classList.add("modal_opened");
   modal.classList.remove("modal_removed");
-  document.addEventListener("keyup", escapeModal(modal), { once: true });
-  document.addEventListener("click", clickModal(modal), { once: true });
+  document.addEventListener("keyup", escapeModal);
+  document.addEventListener("click", clickModal);
 }
 
-/**  Variables for eventListener functions */
+/**  Functions for eventListener functions */
 
-let escapeModal = function (modal) {
-  document.addEventListener(
-    "keydown",
-    (e) => {
-      if (e.key === "Escape") {
-        closePopup(modal);
-        // console.log("Yup");
-      }
-    },
-    { once: true }
-  );
-};
+// let escapeModal = function (modal) {
+//   document.addEventListener(
+//     "keydown",
+//     (e) => {
+//       if (e.key === "Escape") {
+//         closePopup(modal);
+//         console.log("Yup");
+//       }
+//     }
+//     // { once: true }
+//   );
+// };
 
-let clickModal = function (modal) {
-  document.addEventListener("click", (e) => {
-    const modalOpened = document.querySelector(".modal_opened");
-    if (e.target === modalOpened) {
-      closePopup(modal);
-      // console.log("Yup");
-    }
-  }),
-    { once: true };
-};
+function escapeModal(evt) {
+  const openedPopup = document.querySelector(".modal_opened");
+  if (evt.key === "Escape") {
+    closePopup(openedPopup);
+    console.log("Yup");
+  }
+}
+
+function clickModal(evt) {
+  const openedPopup = document.querySelector(".modal_opened");
+  if (evt.target === openedPopup) {
+    closePopup(openedPopup);
+  }
+}
 
 // window.addEventListener("keyup", (e) => {
 //   if (e.key === "Escape") {

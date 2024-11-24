@@ -84,7 +84,7 @@
   text-align: left;
 }
 
-.modal__input_label {
+.modal__label {
   display: flex;
   flex-direction: column;
 }
@@ -93,7 +93,7 @@
   border-bottom: 1px solid #ff0000;
 }
 
-.modal__input_error {
+.modal__error {
   font-family: Inter, Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -105,7 +105,7 @@
   height: 27.52px;
 }
 
-.modal__input_error:last-of-type {
+.modal__error:last-of-type {
   margin-bottom: 31.34px;
 }
 
