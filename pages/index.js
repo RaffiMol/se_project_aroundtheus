@@ -224,13 +224,11 @@ function addCardFormSubmit(evt) {
   evt.target.reset();
   // renderCard({ name, link }, cardListEl);
   // closePopup(cardAddModal);
-  const newCardSubmit = createCard(
-    cardDataSubmit,
-    "#card-template",
-    handleImageClick
-  );
+  // const newCardSubmit =
 
-  cardListEl.prepend(newCardSubmit.getView());
+  cardListEl.prepend(
+    createCard(cardDataSubmit, "#card-template", handleImageClick)
+  );
   closePopup(cardAddModal);
 }
 
