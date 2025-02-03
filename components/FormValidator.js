@@ -1,11 +1,11 @@
 export default class FormValidator {
   constructor(config, formElement) {
     this._form = formElement;
-    this._inputSelector = settings.inputSelector;
-    this._submitButtonSelector = settings.submitButtonSelector;
-    this._inactiveButtonClass = settings.inactiveButtonClass;
-    this._inputErrorClass = settings.inputErrorClass;
-    this._errorClass = settings.errorClass;
+    this._inputSelector = config.inputSelector;
+    this._submitButtonSelector = config.submitButtonSelector;
+    this._inactiveButtonClass = config.inactiveButtonClass;
+    this._inputErrorClass = config.inputErrorClass;
+    this._errorClass = config.errorClass;
 
     this._inputList = [...this._form.querySelectorAll(this._inputSelector)];
 
@@ -76,7 +76,7 @@ export default class FormValidator {
   // }
 
   toggleButtonState() {
-    if (this._hasInvalidInput(this._input)) {
+    if (this._hasInvalidInput()) {
       this._disableButton();
     } else {
       this._enableButton();
@@ -98,7 +98,7 @@ export default class FormValidator {
     }
   }
 
-  _setEventListeners(inputElement) {
+  _setEventListeners() {
     this._inputList.forEach((inputEl) => {
       inputEl.addEventListener("input", () => {
         this._checkInputValidity(inputEl);
@@ -116,11 +116,11 @@ export default class FormValidator {
   }
 }
 
-const settings = {
-  formSelector: ".js-modal-form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: ".modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
+// const settings = {
+//   formSelector: ".js-modal-form",
+//   inputSelector: ".modal__input",
+//   submitButtonSelector: ".modal__button",
+//   inactiveButtonClass: ".modal__button_disabled",
+//   inputErrorClass: "modal__input_type_error",
+//   errorClass: "modal__error_visible",
+// };
