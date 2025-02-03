@@ -20,6 +20,7 @@ export default class FormValidator {
     errorElement.textContent = errorMessage;
     console.log(this._errorClass);
     console.log(this._inputErrorClass);
+    console.log("say something");
   } //Done
 
   _hideInputError(inputElement) {
@@ -120,6 +121,6 @@ const settings = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: ".modal__button_disabled",
-  inputErrorClass: ".modal__input_type_error",
-  errorClass: ".modal__error_visible",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
 };

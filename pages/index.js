@@ -91,8 +91,8 @@ const validationSettings = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: ".modal__button_disabled",
-  inputErrorClass: ".modal__input_type_error",
-  errorClass: ".modal__error_visible",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
 };
 
 const editFormElement = profileEditModal.querySelector("#profile-edit-form");
@@ -226,6 +226,7 @@ function addCardFormSubmit(evt) {
   );
   newCardSubmit.getView();
   cardListEl.prepend(newCardSubmit._cardElement);
+  closePopup(cardAddModal);
 }
 
 function renderCard(cardData, wrapper) {
