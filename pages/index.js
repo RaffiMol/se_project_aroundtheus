@@ -95,6 +95,18 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
+// Enable validation
+
+const editFormValidator = new FormValidator(
+  validationSettings,
+  profileEditForm
+);
+
+const addFormValidator = new FormValidator(validationSettings, cardAddForm);
+
+addFormValidator.enableValidation();
+editFormValidator.enableValidation();
+
 // const editFormElement = profileEditModal.querySelector("#profile-edit-form");
 // const addFormElement = cardAddModal.querySelector("#card-add-form");
 
@@ -138,8 +150,8 @@ function openPopup(modal) {
 // };
 
 function handleEscape(evt) {
-  const openedPopup = document.querySelector(".modal_opened");
   if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".modal_opened");
     closePopup(openedPopup);
     console.log("Yup");
   }
@@ -222,6 +234,7 @@ function addCardFormSubmit(evt) {
   cardDataSubmit.name = cardTitleInput.value;
   cardDataSubmit.link = cardURLInput.value;
   evt.target.reset();
+  addFormValidator.toggleButtonState();
   // renderCard({ name, link }, cardListEl);
   // closePopup(cardAddModal);
   // const newCardSubmit =
@@ -285,15 +298,3 @@ cardAddForm.addEventListener("submit", addCardFormSubmit);
 // const protypeCard = new Card(testCard, "#card-template", handleImageClick);
 // protypeCard.getView();
 // cardListEl.prepend(protypeCard._cardElement);  Adding a new card test
-
-// Enable validation
-
-const editFormValidator = new FormValidator(
-  validationSettings,
-  profileEditForm
-);
-
-const addFormValidator = new FormValidator(validationSettings, cardAddForm);
-
-addFormValidator.enableValidation();
-editFormValidator.enableValidation();
